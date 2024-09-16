@@ -47,3 +47,6 @@ After reviewing the features, it was determined that the columns `area_type`, `s
 The size column contained various representations for the number of bedrooms, such as "4 Bedroom" and "4 BHK". To standardize this, the following steps were taken:
 - Extracted the numerical part of each entry using regular expressions
 - Created a new column `BHK` with these numerical values for consistency.
+
+### Location Data Reduction
+The location column had many unique values. To manage the dimensionality for one-hot encoding, locations with fewer than 10 occurrences were grouped under a common label 'others'. This resulted in reducing the number of unique locations to 242.
