@@ -32,4 +32,18 @@ The goal of this project is to predict house prices based on various features su
   - `price`: Price of the property (target variable)
 
 
+## Data Preparation
+After reviewing the features, it was determined that the columns `area_type`, `society`, `balcony`, and `availability` do not significantly contribute to house price prediction. Therefore, these columns were dropped to streamline the analysis.
 
+
+
+## Data PreProcessing
+
+## Handling Null Values
+- Checked for null values in the dataset.
+- Rows with null values were removed to ensure a clean dataset for analysis.
+
+### Size column Standardlization
+The size column contained various representations for the number of bedrooms, such as "4 Bedroom" and "4 BHK". To standardize this, the following steps were taken:
+- Extracted the numerical part of each entry using regular expressions
+- Created a new column `BHK` with these numerical values for consistency.
