@@ -39,7 +39,7 @@ After reviewing the features, it was determined that the columns `area_type`, `s
 
 ## Data PreProcessing
 
-## Handling Null Values
+### Handling Null Values
 - Checked for null values in the dataset.
 - Rows with null values were removed to ensure a clean dataset for analysis.
 
