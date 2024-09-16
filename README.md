@@ -50,3 +50,15 @@ The size column contained various representations for the number of bedrooms, su
 
 ### Location Data Reduction
 The location column had many unique values. To manage the dimensionality for one-hot encoding, locations with fewer than 10 occurrences were grouped under a common label 'others'. This resulted in reducing the number of unique locations to 242.
+
+### Outlier Treatment
+
+#### 1. Bedroom Size Outliers
+In this project, we identified that a typical bedroom should have at least 300 square feet of space. Any data points where the total square footage per bedroom (`total_sqft_con` / `BHK`) was less than 300 were considered outliers. These outliers were removed to ensure that the data only contains realistic property configurations, which improves the accuracy of our house price predictions.
+
+#### 2. Price Per Square Foot (PPS) Outliers
+Additionally, we assumed that in the same location, properties with prices per square foot (PPS) that deviate beyond the first standard deviation from the mean are outliers. These properties were removed to ensure that the dataset only includes properties with typical pricing trends for their respective locations.
+
+This approach prevents extreme values from skewing the prediction model by focusing on properties with reasonable price variations within each location.
+
+
