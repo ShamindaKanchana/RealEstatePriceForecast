@@ -62,3 +62,17 @@ Additionally, we assumed that in the same location, properties with prices per s
 This approach prevents extreme values from skewing the prediction model by focusing on properties with reasonable price variations within each location.
 
 
+### 3.Outlier Treatment: Bathroom to Bedroom Ratio
+In real estate data, it is typically expected that the number of bathrooms should not significantly exceed the number of bedrooms. For example, a house with two bedrooms and four bathrooms is highly unlikely and represents an outlier in the dataset.
+
+- Criteria: Properties with an unusually high number of bathrooms compared to bedrooms were identified as outliers.
+- Action: We removed these outliers to ensure the dataset remains realistic and reliable. Since the number of such instances was minimal, their removal did not affect the overall distribution of the data.
+
+### 4.Outlier Treatment: BHK-Based Price Filtering
+In our dataset, we observed that certain properties had anomalously low prices per square foot (pps) when compared to similar properties with fewer bedrooms in the same location. These were considered outliers since larger properties are generally expected to have similar or higher prices per square foot.
+
+
+
+- Criteria: For each location, properties with more bedrooms (BHK) were compared to those with fewer bedrooms. If the price per square foot of a property with more bedrooms was significantly lower than the average price per square foot of properties with fewer bedrooms (within the same location), it was identified as an outlier.
+
+- Action:Outliers were removed if the price per square foot was lower than the average price for properties with fewer bedrooms in the same location. To ensure statistical significance, this was only applied to locations where there were more than five properties in a particular bedroom category.
