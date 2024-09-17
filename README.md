@@ -84,9 +84,9 @@ Categorical variables, such as location, were converted to dummy variables using
 
 #### 2.Concatenating Dummy Variables with Original Data
 The dummy variables DataFrame was concatenated with the original DataFrame. This step integrates the one-hot encoded columns into the main DataFrame.
-```df_new = pd.concat([df1, dummies], axis='columns')```
+```python df_new = pd.concat([df1, dummies], axis='columns')```
 
 
 #### 3.Removing Unwanted Columns
 After creating dummy variables, the original categorical columns, including location, were dropped from the DataFrame to avoid redundancy and ensure that only numerical features are used for modeling.
-```df_new = df_new.drop(['location'], axis=1) ```
+```python  df_new = df_new.drop(['location'], axis=1) ```
