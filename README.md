@@ -84,9 +84,32 @@ Categorical variables, such as location, were converted to dummy variables using
 
 #### 2.Concatenating Dummy Variables with Original Data
 The dummy variables DataFrame was concatenated with the original DataFrame. This step integrates the one-hot encoded columns into the main DataFrame.
-`python df_new = pd.concat([df1, dummies], axis='columns')`
+```python df_new = pd.concat([df1, dummies], axis='columns')   ```
 
 
 #### 3.Removing Unwanted Columns
 After creating dummy variables, the original categorical columns, including location, were dropped from the DataFrame to avoid redundancy and ensure that only numerical features are used for modeling.
-`python  df_new = df_new.drop(['location'], axis=1) `
+```python  df_new = df_new.drop(['location'], axis=1) ```
+
+## Feature Engineering
+In the feature engineering phase, we selected features that are most relevant for predicting house prices. Based on the analysis, the following features were identified as significant:
+
+- total_sqft_con: This feature represents the total square feet area of the house, which directly impacts the price.
+- bath: The number of bathrooms in the house, which is a relevant feature for price estimation.
+- BHK: The number of bedrooms, which also influences the house price.
+
+## Model Buidling
+
+### Linear Regression
+For predicting house prices, a Linear Regression model was employed. The following steps were followed to build and evaluate the model:
+
+## Data Preparation:
+
+## Features selected: total_sqft_con, bath, and BHK.
+The dataset was split into training and testing sets to evaluate the model's performance.
+Model Training:
+
+## A LinearRegression model from the sklearn library was used.
+The model was trained using the training data.
+
+
